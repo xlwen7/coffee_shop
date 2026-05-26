@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モモジ喫茶 MOMOJI CAFE | 日系怪美古著風咖啡廳</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiand+One&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .font-cute-pop { font-family: 'Mochiand One', sans-serif; }
+        
+        /* 核心品牌色自訂 */
+        .bg-wine { background-color: #7A1E22; }
+        .text-wine { color: #7A1E22; }
+        .border-wine { border-color: #7A1E22; }
+        .bg-mustard { background-color: #E5A93C; }
+        .text-mustard { color: #E5A93C; }
+        .bg-cream { background-color: #FFFDF6; }
+
+        /* 古著幾何棋盤格背景 */
+        .bg-checkerboard {
+            background-image: 
+                linear-gradient(45deg, #7A1E22 25%, transparent 25%), 
+                linear-gradient(-45deg, #7A1E22 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #7A1E22 75%), 
+                linear-gradient(-45deg, transparent 75%, #7A1E22 75%);
+            background-size: 30px 30px;
+            background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+        }
+
+        /* 隱藏原生滾動條但保留滾動功能 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-cream text-stone-800 antialiased selection:bg-yellow-200 h-full overflow-y-scroll snap-y snap-mandatory no-scrollbar">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b-2 border-stone-950 px-4 py-3 md:px-8">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center tracking-wider">
+                <span class="bg-wine text-white text-lg md:text-xl font-black px-3 py-1 border-2 border-stone-950 shadow-[2px_2px_0px_#000] -rotate-1">
+                    モモジ喫茶
+                </span>
+                <span class="bg-mustard text-stone-950 text-xs font-bold px-2 py-1.5 border-y-2 border-r-2 border-stone-950 shadow-[2px_2px_0px_#000] rotate-2 font-cute-pop">
+                    MOMOJI
+                </span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-bold">
+                <a href="#hero" class="text-stone-950 hover:bg-mustard px-3 py-1 border border-transparent hover:border-stone-950 transition-all rounded">首頁</a>
+                <a href="#about" class="text-stone-950 hover:bg-mustard px-3 py-1 border border-transparent hover:border-stone-950 transition-all rounded">關於我們</a>
+                <a href="#menu" class="text-stone-950 hover:bg-wine hover:text-white px-3 py-1 border border-transparent hover:border-stone-950 transition-all rounded">怪美菜單</a>
+                <a href="#access" class="text-stone-950 hover:bg-yellow-100 px-3 py-1 border border-transparent hover:border-stone-950 transition-all rounded">尋找モモジ</a>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden text-stone-950 p-1 border-2 border-stone-950 bg-mustard shadow-[2px_2px_0px_#000] cursor-pointer" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white border-2 border-stone-950 p-4 space-y-2 shadow-[4px_4px_0px_#000] text-sm font-bold">
+            <a href="#hero" class="block text-stone-950 py-2 border-b border-stone-100">● 首頁 HOME</a>
+            <a href="#about" class="block text-stone-950 py-2 border-b border-stone-100">● 關於我們 ABOUT</a>
+            <a href="#menu" class="block text-stone-950 py-2 border-b border-stone-100">● 怪美菜單 MENU</a>
+            <a href="#access" class="block text-stone-950 py-2 border-b border-stone-100">● 尋找モモジ ACCESS</a>
+        </div>
+    </nav>
+
+    <header id="hero" class="h-dvh w-full snap-start pt-16 border-b-2 border-stone-950 grid grid-cols-1 md:grid-cols-12 overflow-hidden">
+        <div class="md:col-span-7 bg-wine text-white p-6 md:p-12 flex flex-col justify-center items-start border-b-2 md:border-b-0 md:border-r-2 border-stone-950 h-full">
+            <span class="bg-mustard text-stone-950 text-xs font-bold px-3 py-1 border border-stone-950 shadow-[2px_2px_0px_#000] mb-4 font-cute-pop">
+                RETRO × KAWAII × GEEK ♫
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-wider leading-tight">
+                古著少女的<br><span class="text-mustard">非典型</span>喫茶時光。
+            </h1>
+            <p class="text-xs md:text-sm max-w-md text-red-100 font-normal mb-6 leading-relaxed tracking-wide">
+                隱身於赤峰街巷弄，我們揉進了古著式的怪異與甜美。利用簡潔線條、幾何撞色，外加一點點叛逆、好懂的日文點綴。
+            </p>
+            <a href="#menu" class="inline-block bg-mustard text-stone-950 text-xs font-bold px-5 py-3 border-2 border-stone-950 shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                今日極推 (イチオシ) ➔
+            </a>
+        </div>
+        <div class="md:col-span-5 bg-checkerboard opacity-95 flex items-center justify-center p-6 h-full">
+            <div class="bg-cream text-stone-950 border-2 border-stone-950 p-6 shadow-[6px_6px_0px_#E5A93C] transform -rotate-2 text-center max-w-xs">
+                <p class="text-xl mb-1">🍒</p>
+                <p class="text-md font-black tracking-widest text-wine">おいしい！</p>
+                <p class="text-xs text-stone-500 mt-1 leading-relaxed font-medium">歡迎光臨モモジ的<br>怪美復古宇宙</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="h-dvh w-full snap-start pt-16 bg-cream flex items-center justify-center px-4 border-b-2 border-stone-950">
+        <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-5 bg-mustard border-2 border-stone-950 p-4 shadow-[8px_8px_0px_#000] relative transform rotate-1 hidden md:block">
+                <div class="w-full h-80 md:h-96 bg-white border border-stone-950 overflow-hidden relative">
+                    <img src="麵茶蛋糕.jpeg" alt="麵茶蛋糕" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-stone-950 py-3 text-center">
+                        <p class="text-wine text-sm font-black tracking-widest leading-none">【 麵 茶 蛋 糕 】</p>
+                        <p class="text-[10px] text-stone-400 mt-1.5">#レトロかわいい #モモジ喫茶</p>
+                    </div>
+                </div>
+                <div class="absolute -top-3 -left-3 bg-red-500 text-white text-[11px] font-bold px-3 py-1 border-2 border-stone-950 font-cute-pop shadow-[2px_2px_0px_#000]">
+                    NEW RETRO
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 space-y-5">
+                <div>
+                    <span class="text-xs text-red-600 font-bold block tracking-widest font-cute-pop">// OUR STORY // 私たちの世界</span>
+                    <h2 class="text-2xl md:text-3xl font-black text-stone-950 tracking-wide mt-1">拒絕無聊！有點怪、更可愛</h2>
+                </div>
+                <p class="text-stone-600 text-xs md:text-sm leading-relaxed tracking-wide font-medium">
+                    如果赤峰街的老屋咖啡廳都長得差不多，那就來點不一樣的吧。我們將大膽不羈的古著美學融入咖啡廳空間。酒紅色不再只是安靜優雅，它是我們的叛逆底色；奶油白不再只是純潔，它是打破常規的幾何撞色。
+                </p>
+                <div class="bg-white border-2 border-stone-950 p-4 shadow-[4px_4px_0px_#7A1E22] max-w-md">
+                    <p class="text-xs md:text-sm font-bold text-wine">「ヘンテコだけど、愛おしい。」</p>
+                    <p class="text-xs text-stone-400 mt-0.5">（雖然奇奇怪怪，但卻非常可愛。）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="h-dvh w-full snap-start pt-20 pb-6 bg-mustard text-stone-950 flex items-center justify-center px-4 overflow-hidden border-b-2 border-stone-950">
+        <div class="max-w-6xl w-full h-full flex flex-col justify-between">
+            <div class="text-center mb-2 md:mb-4 shrink-0">
+                <span class="text-xs text-wine font-bold block tracking-widest font-cute-pop">// CRAZY DELICIOUS // メニュー</span>
+                <h2 class="text-xl md:text-2xl font-black text-stone-950 mt-0.5 tracking-wider">モモジ推薦．怪好吃餐點</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 overflow-y-auto max-h-[72vh] md:max-h-[75vh] pr-1 no-scrollbar py-2">
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="硬式布丁.JPG" alt="硬派濃焦糖布丁" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">硬派濃焦糖布丁</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">扎實蛋香搭配微苦焦糖，怪美少女最愛。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-red-600 font-bold">● 招牌</span>
+                        <span class="font-black text-wine md:text-xs">$80</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="冰淇淋綠哈密瓜蘇打.jpeg" alt="冰淇淋綠哈密瓜蘇打" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">冰淇淋綠哈密瓜蘇打</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">翠綠蘇打撞上巨大香草冰淇淋，拍照必備。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-emerald-700 font-bold">● 人氣</span>
+                        <span class="font-black text-wine md:text-xs">$75</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="鬆餅.PNG" alt="奶油鬆餅" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">奶油鬆餅</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">金黃酥脆格子鬆餅，綿密鮮奶油完美療癒。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-amber-600 font-bold">● 經典</span>
+                        <span class="font-black text-wine md:text-xs">$110</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="草莓蛋糕.jpeg" alt="草莓鮮奶油蛋糕" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">草莓鮮奶油蛋糕</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">動漫走出來的三角造型，鮮奶油厚實邪惡。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-pink-500 font-bold">● 季節</span>
+                        <span class="font-black text-wine md:text-xs">$180</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="提拉米蘇.jpeg" alt="提拉米蘇" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">提拉米蘇</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">綿密馬斯卡彭伴隨可可香，入口即化。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-sky-600 font-bold">● 新品</span>
+                        <span class="font-black text-wine md:text-xs">$160</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="拿鐵.jpeg" alt="拿鐵" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">拿鐵</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">絲滑奶泡融合濃郁咖啡，醇厚順口。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-orange-600 font-bold">● 飲品</span>
+                        <span class="font-black text-wine md:text-xs">$150</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="布朗尼.jpeg" alt="大人味黑摩卡布朗尼" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">大人味黑摩卡布朗尼</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">微苦高純度可可。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-stone-600 font-bold">● 微苦</span>
+                        <span class="font-black text-wine md:text-xs">$120</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-wine p-3 flex flex-col justify-between shadow-[3px_3px_0px_#7A1E22] min-h-[190px] md:min-h-[240px]">
+                    <div>
+                        <div class="w-full h-24 md:h-32 bg-stone-100 border border-stone-300 overflow-hidden mb-2">
+                            <img src="起司玉米片.jpeg" alt="起司玉米片" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xs md:text-sm font-black text-stone-950 tracking-wide truncate">起司玉米片</h3>
+                        <p class="text-[10px] md:text-[11px] text-stone-500 font-medium mt-0.5 leading-tight line-clamp-2">酥脆玉米片裹滿濃郁起司。</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-1 border-t border-dashed border-stone-200 text-[10px]">
+                        <span class="text-purple-600 font-bold">● 限定</span>
+                        <span class="font-black text-wine md:text-xs">$120</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-[10px] text-wine mt-2 shrink-0 font-bold">
+                ※ お一人様ワンドリンクのご注文をお願いいたします。(基本消費：每人一杯飲品)
+            </p>
+        </div>
+    </section>
+
+    <section id="access" class="h-dvh w-full snap-start pt-16 flex flex-col justify-between px-4 overflow-hidden">
+        <div class="max-w-5xl w-full mx-auto my-auto bg-white text-stone-950 border-2 border-stone-950 p-6 md:p-8 shadow-[6px_6px_0px_#7A1E22]">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-5 space-y-4">
+                    <div>
+                        <span class="text-[10px] text-wine font-bold block tracking-widest font-cute-pop">ACCESS // お店へのアクセス</span>
+                        <h2 class="text-xl md:text-2xl font-black tracking-wide">尋找モモジ基地</h2>
+                    </div>
+                    <div class="space-y-2 text-xs md:text-sm font-medium leading-relaxed">
+                        <p>📍 台北市大同區赤峰街モモジ巷X號 (捷運中山站5號出口)</p>
+                        <p>⏰ 週二至週日 13:00 - 21:00 (每週一公休)</p>
+                        <p>📞 02-255X-XXXX (歡迎來電預約)</p>
+                    </div>
+                    <a href="#" class="inline-block bg-mustard text-stone-950 text-[11px] font-bold px-4 py-2.5 border-2 border-stone-950 shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                        開啟 GOOGLE MAPS ➔
+                    </a>
+                </div>
+                <div class="md:col-span-7 bg-cream border-2 border-stone-950 p-2 min-h-[140px] flex flex-col items-center justify-center text-stone-400">
+                    <span class="text-2xl mb-1">🗺️</span>
+                    <p class="text-stone-950 text-xs font-black tracking-wider">【Google 地圖嵌入區】</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="w-full bg-wine text-white text-center py-4 border-t-2 border-stone-950 text-[10px] space-y-0.5 shrink-0">
+            <p class="font-black tracking-widest">🍒 モモジ喫茶 - MOMOJI CAFE 🍒</p>
+            <p class="pt-1 text-red-300/60 font-medium">© 2026 MOMOJI CAFE. Stay Weird, Stay Cute.</p>
+        </footer>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // 切換行動版選單顯示狀態
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 點擊行動版選單任一連結後自動收合選單
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
